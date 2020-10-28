@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ecmfuns: Evan’s personal collection of functions
+# ecmfuns: My personal collection of functions
 
 <!-- badges: start -->
 <!-- badges: end -->
