@@ -19,3 +19,5 @@ Imports:
     ImaginR,
     lifecycle
 RdMacros: lifecycle
+URL: https://github.com/evanmascitti/ecmfuns
+BugReports: https://github.com/evanmascitti/ecmfuns/issues
