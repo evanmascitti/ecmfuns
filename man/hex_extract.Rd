@@ -21,3 +21,11 @@ Use this function to quickly extract the average color of an image for display
 on screens. Helpful for visualization purposes and making realistic drawings
 in vector graphics software such as Adobe Illustrator.
 }
+\examples{
+\dontrun{
+"image_file_1" \%>\%
+imager::load.image() \%>\%
+hex_extract() }
+
+
+}

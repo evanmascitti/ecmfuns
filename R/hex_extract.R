@@ -16,7 +16,7 @@
 #'"image_file_1" %>%
 #'imager::load.image() %>%
 #'hex_extract() }
-#'}
+#'
 #'
 hex_extract <- function(image) {
   image %>%

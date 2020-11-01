@@ -16,7 +16,7 @@
 #'@param tabbed_directory The quoted directory in which the files reside, as
 #'  understood from the auto-complete hosted in R Studio. For .Rmd files this is
 #'  a relative path from the directory housing the .Rmd file.
-#'@param filetype a quoted 3-letter file extension, \strong{without} the "." Be
+#'@param filetype a quoted file extension, \strong{without} the "." Be
 #'  sure to use correct capitalization for the file type of interest.
 #'
 #'@details This function is designed to be used with the pipe (`%>%`) from
@@ -51,11 +51,11 @@ gather.files <- function(tabbed_directory = " ", filetype = " ") {
   parent_dirs <- paste0(here::here(tabbed_directory), '/')
   file_names <- list.files(path= parent_dirs, pattern = filetype, recursive = F)
   full_paths <- paste0(parent_dirs, file_names ) %>%
-    purrr::set_names(stringr::str_sub(basename(.), end = -5) )
+    purrr::set_names(stringr::str_remove(basename(.), pattern = paste0(".", filetype)) )
 
   if (length(stringr::str_detect(string = file_names, pattern = filetype) ) == 0 ) {
-    stop("\n\n\nDirectory does not contain any files with this extension.
-      Check thefollowing:\n\n 1.  Did you specify the correct sub-folder?
+    stop("\n\nDirectory does not contain any files with this extension.
+      Check the following:\n\n 1.  Did you specify the correct sub-folder?
       This function does not search recursively.\n\n 2.  Did you type the
       file extension correctly? This includes capitilization! Don't use
       a \".\" before the 3-letter extension.")

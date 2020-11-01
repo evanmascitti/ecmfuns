@@ -11,7 +11,7 @@ gather.files(tabbed_directory = " ", filetype = " ")
 understood from the auto-complete hosted in R Studio. For .Rmd files this is
 a relative path from the directory housing the .Rmd file.}
 
-\item{filetype}{a quoted 3-letter file extension, \strong{without} the "." Be
+\item{filetype}{a quoted file extension, \strong{without} the "." Be
 sure to use correct capitalization for the file type of interest.}
 }
 \value{
