@@ -18,7 +18,11 @@ Imports:
     ImaginR,
     lifecycle,
     magrittr,
-    scales
+    scales,
+    ggforce,
+    here,
+    purrr,
+    stringr
 RdMacros: lifecycle
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
