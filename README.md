@@ -12,3 +12,5 @@ of what it does:
 
 `hex_extract()`: pull the average hexidecimal color code from an image
 file
+
+`gather.files()`: prepare a vector of file paths to be batch-read using `purrr::map` and another data import function (which depends on the file type)
