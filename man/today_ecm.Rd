@@ -2,16 +2,55 @@
 % Please edit documentation in R/today_ecm.r
 \name{today_ecm}
 \alias{today_ecm}
-\title{Return today's date in a professional format}
+\title{\lifecycle{maturing}}
 \usage{
-today_ecm(month_abb = TRUE)
+today_ecm(
+  slash_format = FALSE,
+  month_abb = TRUE,
+  weekday = TRUE,
+  weekday_abb = FALSE
+)
 }
 \arguments{
+\item{slash_format}{Whether the month should be printed as a month/day/year
+string or in formal language}
+
 \item{month_abb}{Whether the month should be abbreviated or printed in full}
+
+\item{weekday}{Whether the day of week should be included}
+
+\item{weekday_abb}{Whether the day of week (if included) should be
+abbreviated}
 }
 \value{
-A professionally formatted character string containing the current system date.
+A professionally formatted character string containing the current
+system date.
 }
 \description{
-The \strong{lubridate} package does an excellent job of parsing dates which are in messy formats back to POSIX format. However it is not so good for printing dates in the way the people typically read or think about them. This function prints the current date in a format more amenable to professional reports and presentations.
+Return today's date in a professional format
+}
+\details{
+The \strong{lubridate} package does an excellent job of parsing dates which
+are in messy formats back to POSIX format. However it is not so good for
+printing dates in the way the people typically read or think about them. This
+function prints the current date in a format more amenable to professional
+reports and presentations. The date can be printed in typical shorthand or in
+a formal manner. Both the month and weekday can be included or excluded, and
+if they are included they can be either printed in full or abbreviated.
+}
+\examples{
+# print full date with weekday name
+today_ecm()
+
+# print full date with abbreviated weekday name
+today_ecm(weekday = TRUE, weekday_abb = TRUE)
+
+# print date without the weekday
+
+today_ecm(weekday_abb = FALSE)
+# print date with shorthand notation
+
+today_ecm(slash_format= TRUE)
+
+
 }
