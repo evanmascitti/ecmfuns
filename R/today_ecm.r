@@ -10,7 +10,7 @@
 #' a formal manner. Both the month and weekday can be included or excluded, and
 #' if they are included they can be either printed in full or abbreviated.
 #'
-#' @param slash_format Whether the month should be printed as a month/day/year
+#' @param dash_format Whether the month should be printed as a month/day/year
 #'   string or in formal language
 #' @param month_abb Whether the month should be abbreviated or printed in full
 #' @param weekday Whether the day of week should be included
@@ -28,24 +28,24 @@
 #' today_ecm(weekday = TRUE, weekday_abb = TRUE)
 #'
 #' # print date without the weekday
-#'
 #' today_ecm(weekday_abb = FALSE)
-#' # print date with shorthand notation
 #'
-#' today_ecm(slash_format= TRUE)
+#' # print date with shorthand notation
+#' today_ecm(dash_format= TRUE)
 #'
 #'
 
-today_ecm <- function(slash_format= FALSE, month_abb = TRUE,
+today_ecm <- function(dash_format= FALSE, month_abb = TRUE,
                       weekday = TRUE, weekday_abb = FALSE) {
   if(weekday == FALSE & weekday_abb == TRUE) {
     stop("\nYou specified that the weekday should be abbreviated, but also indicated that the weekday should not be included at all. Did you intend to print the weekday?")
   }
-  if(slash_format == TRUE) {
+  if(dash_format == TRUE) {
   full_date <-paste(lubridate::month(lubridate::today()),
                  lubridate::day(lubridate::today()),
-                 lubridate::year(lubridate::today()),
-                 sep = '/')
+                 stringr::str_sub(string = lubridate::year(lubridate::today()),
+                                  start = 3),
+                 sep = '-')
   } else{
 
   weekday <- if (weekday == TRUE){

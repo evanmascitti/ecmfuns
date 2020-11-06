@@ -5,14 +5,14 @@
 \title{\lifecycle{maturing}}
 \usage{
 today_ecm(
-  slash_format = FALSE,
+  dash_format = FALSE,
   month_abb = TRUE,
   weekday = TRUE,
   weekday_abb = FALSE
 )
 }
 \arguments{
-\item{slash_format}{Whether the month should be printed as a month/day/year
+\item{dash_format}{Whether the month should be printed as a month/day/year
 string or in formal language}
 
 \item{month_abb}{Whether the month should be abbreviated or printed in full}
@@ -46,11 +46,10 @@ today_ecm()
 today_ecm(weekday = TRUE, weekday_abb = TRUE)
 
 # print date without the weekday
-
 today_ecm(weekday_abb = FALSE)
-# print date with shorthand notation
 
-today_ecm(slash_format= TRUE)
+# print date with shorthand notation
+today_ecm(dash_format= TRUE)
 
 
 }
