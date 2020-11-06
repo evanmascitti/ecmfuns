@@ -22,7 +22,8 @@ Imports:
     ggforce,
     here,
     purrr,
-    stringr
+    stringr,
+    lubridate
 RdMacros: lifecycle
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
