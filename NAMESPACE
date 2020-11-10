@@ -3,6 +3,7 @@
 export("%>%")
 export(gather.files)
 export(hex_extract)
+export(image_filesize)
 export(today_ecm)
 import(here)
 importFrom(magrittr,"%>%")

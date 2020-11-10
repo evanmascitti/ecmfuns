@@ -1,6 +1,6 @@
 Package: ecmfuns
 Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: 
     person(given = "First",
            family = "Last",
@@ -23,7 +23,8 @@ Imports:
     here,
     purrr,
     stringr,
-    lubridate
+    lubridate,
+    gdata
 RdMacros: lifecycle
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
