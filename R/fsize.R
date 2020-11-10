@@ -8,7 +8,7 @@
 #'
 #' @seealso \link[base]{file.size}, \link[gdata]{humanReadable}
 #'
-image_filesize <- function(path, digits = 0){
+fsize <- function(path, digits = 0){
 
   gdata::humanReadable(x = path, standard = "SI", digits = digits)
 }
