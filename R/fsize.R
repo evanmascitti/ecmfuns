@@ -10,5 +10,5 @@
 #'
 fsize <- function(path, digits = 0){
 
-  gdata::humanReadable(x = path, standard = "SI", digits = digits)
+  gdata::humanReadable(x = base::file.size(path), standard = "SI", digits = digits)
 }
