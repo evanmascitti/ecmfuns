@@ -4,7 +4,7 @@
 \alias{read.files}
 \title{Read multiple files into R}
 \usage{
-read.files(.x = NULL, read_fn = NULL, enframe = TRUE, value = "file")
+read.files(.x, read_fn, enframe = TRUE, value = "file")
 }
 \arguments{
 \item{.x}{a vector of file paths to read}

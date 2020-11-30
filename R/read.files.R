@@ -13,9 +13,13 @@
 #' @export
 #'
 
-read.files <- function(.x = NULL, read_fn = NULL, enframe= TRUE, value = "file") {
+read.files <- function(.x, read_fn, enframe= TRUE, value = "file") {
 
-  if(missing(read_fun)){
+  if(missing(.x)){
+    stop('\n No vector of file paths provided. Please specify which files to read.')
+  }
+
+  if(missing(read_fn)){
     stop('\n No `read_fn` provided. Please specify an unquoted data import function such as `read_csv`.')
   }
 

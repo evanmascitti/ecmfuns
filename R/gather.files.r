@@ -43,7 +43,9 @@ gather.files <- function(dir = ".", extension = NULL, recursive = FALSE) {
     ext <- extension } else {
       ext <- paste0(".", extension)}
 
-  full_paths <- list.files(path= dir, pattern = ext, recursive = recursive)
+  suppressMessages(
+    full_paths <- list.files(path= dir, pattern = ext, recursive = recursive)
+  )
 
   if (length(stringr::str_detect(string = full_paths, pattern = ext) ) == 0 ) {
     stop("\n\nDirectory does not contain any files with this extension.
@@ -52,9 +54,10 @@ gather.files <- function(dir = ".", extension = NULL, recursive = FALSE) {
       file extension correctly? Check capitalization and remember to use quotes.")
   }
 
-  full_paths %>%
-    purrr::set_names(stringr::str_remove(string = basename(.), pattern = ext) )
+  clean_names <- stringr::str_remove(full_paths, pattern = ext)
 
+  full_paths_w_clean_names <- full_paths %>%
+    purrr::set_names(nm = clean_names)
 
-  return(full_paths)
+  return(full_paths_w_clean_names)
 }
