@@ -4,62 +4,43 @@
 \alias{gather.files}
 \title{\lifecycle{experimental}}
 \usage{
-gather.files(
-  dir = " ",
-  type = " ",
-  read_fn = NULL,
-  enframe = TRUE,
-  value = "file",
-  recursive = FALSE
-)
+gather.files(dir = ".", extension = NULL, recursive = FALSE)
 }
 \arguments{
-\item{dir}{Relative path to directory where the files reside. For .Rmd files
-this begins at the same level as the .Rmd file}
+\item{dir}{Relative path to directory where the files reside (includes the
+trailing \code{/}). For .Rmd files this begins at the same level as the .Rmd
+file, which is usually good but can be annoying when the file you need to
+read resides above the .Rmd file in the directory structure. In this case
+you can look one directory upward with \verb{/..} or to the top-level directory with
+\code{/}.}
 
-\item{type}{a quoted file extension, accepts 3-letter extension with or without a preceding "." Verify capitilization.}
-
-\item{read_fn}{unquoted function for reading files (no parentheses), for example \code{read_csv}}
-
-\item{enframe}{whether to actually read the files into the current R session and compile them with \code{tibble::enframe()}}
-
-\item{value}{column title for the files, if using \code{enframe} argument}
+\item{extension}{quoted file extension, accepts 3-letter extension with OR
+without a preceding "." Verify capitalization.}
 
 \item{recursive}{whether to search sub-directories}
 }
 \value{
 A named character vector of file paths to read. The element names are
-the file name with the directories and file extension stripped.
+the base file names with the file extension stripped.
 }
 \description{
 Prepare a set of files to be iteratively read into R
 }
 \details{
-This is a helper function to remove friction and reduce eyesore when reading multiple data files
-in one step. A base
-method with \code{list.files()} works fine but requires more arguments than I want to remember for this very common task.
-This wrapper cleans the path strings to assign nice names to the files as they are imported.
+This is a helper function to remove friction and reduce eyesore when reading
+multiple data files in one step. A base method with \code{list.files()} works fine
+but requires more arguments than I want to remember for this very common task.
+This wrapper cleans the path strings to assign nice names to the files as they
+are imported.
 
-This function is designed to be used with the pipe (\verb{\%>\%}) from
-\strong{magrittr} and two additional functions: \itemize{ \item{\code{map()} in the
-\strong{purrr} package, which allows the read-in operation to be performed
-for all files in one step} \item{a user-supplied function, such as
-\code{read_csv()} for comma-delimited value files or \code{vcgImport()} for 3D mesh
-files} .}
-
-A recommended step to complete this pipeline is to call
-\code{tibble::enframe()} after the \verb{map(<reading function>)} call. This condenses
-the list to a nested tibble, with each file as a row. Optionally, use the
-\code{value} argument inside the call to \code{enframe()} to add a useful description
-to what the file (i.e. value) actually is. Because \code{gather.files} provides
-human-friendly names to its elements, there should not be a need to adjust
-the \code{name} argument inside \code{enframe()}.
+Output is easily piped to \code{\link[=read.files]{read.files()}} to read the files and
+compile them in a tibble. Because \code{gather.files} gives nice names to its
+elements, the list is more human-readable.
 }
 \examples{
-\dontrun{
-gather.files(
-dir = "data/raw_data/2020-10-25_Atterberg_limits",
-type= "csv") \%>\%
-map(read_csv) \%>\%
-enframe(value= "raw_data_file") }
+ \dontrun{
+gather.files(dir = "data/raw_data/2020-10-25_Atterberg_limits",
+extension= ".csv")}
+
+
 }
