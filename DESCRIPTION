@@ -24,7 +24,8 @@ Imports:
     purrr,
     stringr,
     lubridate,
-    gdata
+    gdata,
+    tibble
 RdMacros: lifecycle
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues

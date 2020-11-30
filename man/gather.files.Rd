@@ -4,15 +4,28 @@
 \alias{gather.files}
 \title{\lifecycle{experimental}}
 \usage{
-gather.files(tabbed_directory = " ", filetype = " ")
+gather.files(
+  dir = " ",
+  type = " ",
+  read_fn = NULL,
+  enframe = TRUE,
+  value = "file",
+  recursive = FALSE
+)
 }
 \arguments{
-\item{tabbed_directory}{The quoted directory in which the files reside, as
-understood from the auto-complete hosted in R Studio. For .Rmd files this is
-a relative path from the directory housing the .Rmd file.}
+\item{dir}{Relative path to directory where the files reside. For .Rmd files
+this begins at the same level as the .Rmd file}
 
-\item{filetype}{a quoted file extension, \strong{without} the "." Be
-sure to use correct capitalization for the file type of interest.}
+\item{type}{a quoted file extension, accepts 3-letter extension with or without a preceding "." Verify capitilization.}
+
+\item{read_fn}{unquoted function for reading files (no parentheses), for example \code{read_csv}}
+
+\item{enframe}{whether to actually read the files into the current R session and compile them with \code{tibble::enframe()}}
+
+\item{value}{column title for the files, if using \code{enframe} argument}
+
+\item{recursive}{whether to search sub-directories}
 }
 \value{
 A named character vector of file paths to read. The element names are
@@ -22,16 +35,10 @@ the file name with the directories and file extension stripped.
 Prepare a set of files to be iteratively read into R
 }
 \details{
-This is a helper function to remove friction when reading multiple data files
-in one step. Using \code{list.files()} is not intuitive for reading files because it
-returns only the base file name and none of the parent directories. A standard
-method would require a \code{paste()} or \code{paste0()} call to concatenate the root path
-and the base file name.
-
-\code{gather.files()} reduces opacity and eyesore during this common task. It
-leverages the functionality of \code{list.files()} with the \code{str_sub()} function from
-\strong{stringr} to remove both the parent directory and the file
-extensions from the names assigned upon import.
+This is a helper function to remove friction and reduce eyesore when reading multiple data files
+in one step. A base
+method with \code{list.files()} works fine but requires more arguments than I want to remember for this very common task.
+This wrapper cleans the path strings to assign nice names to the files as they are imported.
 
 This function is designed to be used with the pipe (\verb{\%>\%}) from
 \strong{magrittr} and two additional functions: \itemize{ \item{\code{map()} in the
@@ -51,8 +58,8 @@ the \code{name} argument inside \code{enframe()}.
 \examples{
 \dontrun{
 gather.files(
-tabbed_directory= "data/raw_data/2020-10-25_Atterberg_limits",
-filetype= "csv") \%>\%
+dir = "data/raw_data/2020-10-25_Atterberg_limits",
+type= "csv") \%>\%
 map(read_csv) \%>\%
 enframe(value= "raw_data_file") }
 }
