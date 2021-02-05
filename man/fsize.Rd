@@ -18,5 +18,5 @@ The file size, formatted with appropriate prefix
 Print a file size in a human-readable format
 }
 \seealso{
-\link[base]{file.size}, \link[gdata]{humanReadable}
+\code{\link[base:file.info]{base::file.size()}}, \code{\link[gdata:humanReadable]{gdata::humanReadable()}}
 }

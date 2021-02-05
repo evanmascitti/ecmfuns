@@ -1,6 +1,6 @@
 Package: ecmfuns
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9002
+Title: A Compilation of My Own Personal R Functions
+Version: 0.0.0.9003
 Authors@R: 
     person(given = "First",
            family = "Last",
@@ -25,8 +25,11 @@ Imports:
     stringr,
     lubridate,
     gdata,
-    tibble
-RdMacros: lifecycle
+    tibble,
+    rmarkdown,
+    xfun,
+    mathjaxr
+RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
 Depends: 
