@@ -39,6 +39,7 @@ output:
 <!-- If the document gets too long, try using separate R scripts or even standalone R Markdown documents by using `source()` or passing a vector of file paths to the chunk option `child = ` -->
 
 # Slide 1
+
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 
@@ -49,7 +50,7 @@ knitr::opts_chunk$set(message = F,
                       fig.asp = 9/16,
                       fig.align = 'center',
                       dev = 'svglite')
-
+knitr::opts_knit$set(root.dir = getwd())
 
 ```
 

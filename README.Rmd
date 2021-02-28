@@ -22,4 +22,6 @@ This package is a compilation of R functions I find useful in my day-to-day work
 
 `hex_extract()`: pull the average hexidecimal color code from an image file
 
+[`new_notes()`](R/new_notes.R): creates a template Rmd document for taking notes on journal papers and books)
+
 

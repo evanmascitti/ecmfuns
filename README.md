@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ecmfuns: My personal collection of functions
+# ecmfuns: Evan’s personal collection of functions
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -13,4 +13,5 @@ of what it does:
 `hex_extract()`: pull the average hexidecimal color code from an image
 file
 
-`gather.files()`: prepare a vector of file paths to be batch-read using `purrr::map` and another data import function (which depends on the file type)
+[`new_notes()`](R/new_notes.R): creates a template Rmd document for
+taking notes on journal papers and books)

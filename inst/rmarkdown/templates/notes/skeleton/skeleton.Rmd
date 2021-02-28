@@ -1,0 +1,24 @@
+---
+title: "Research or other reading notes"
+date: "begun __ ; document last compiled `r ecmfuns::ecm_timestamp()`"
+output:
+  html_document:
+    theme: null
+    css: "minimal_sans_css.css"
+    toc: true
+    number_sections: false
+    highlight_style: github
+---
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F,
+                      fig.align = 'center',
+                      out.width = "80%",
+                      fig.asp = 9/16,
+                      dev = 'svglite')
+xfun::pkg_attach(c("tidyverse", "cowplot"))
+ggplot2::theme_set(cowplot::theme_cowplot()+
+                     cowplot::background_grid())
+```
+
