@@ -22,3 +22,24 @@ code {
   background-color: #f8f8f8;
 }
 
+/* how to put responsive iframes in and use CSS to style
+ <div class="iframe-container">
+   <iframe src="https://github.cm/jtleek/talkguide" allowfullscreen></iframe>
+ </div>
+*/
+
+.iframe-container {
+  overflow: hidden;
+  /* 16:9 aspect ratio */
+  padding-top: 56.25%;
+  position: relative;
+}
+
+.iframe-container iframe {
+   border: 0;
+   height: 100%;
+   left: 0;
+   position: absolute;
+   top: 0;
+   width: 100%;
+}
