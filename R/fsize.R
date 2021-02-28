@@ -6,7 +6,7 @@
 #' @return The file size, formatted with appropriate prefix
 #' @export
 #'
-#' @seealso \link[base]{file.size}, \link[gdata]{humanReadable}
+#' @seealso [`file.size()`], \link[gdata]{humanReadable}
 #'
 fsize <- function(path, digits = 0){
 

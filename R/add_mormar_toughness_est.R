@@ -13,6 +13,8 @@
 #' @export
 #'
 add_mormar_toughness_est <- function(df){
-  df %>%
-    dplyr::mutate(mormar_toughness_est = ((.data$PI/.data$LL) - 0.3397) / 0.0077 )
+
+  new_df <- dplyr::mutate(df, mormar_toughness_est = ((.data$PI/.data$LL) - 0.3397) / 0.0077 )
+  return(new_df)
 }
+utils::globalVariables(".data")

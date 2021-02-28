@@ -16,7 +16,7 @@ RoxygenNote: 7.1.1
 Imports: 
     imager,
     ImaginR,
-    lifecycle,
+    rmarkdown,
     magrittr,
     scales,
     ggforce,
@@ -26,11 +26,15 @@ Imports:
     lubridate,
     gdata,
     tibble,
-    rmarkdown,
     xfun,
-    mathjaxr
+    mathjaxr,
+    xaringan,
+    dplyr
+Suggests: 
+    lifecycle
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
 Depends: 
     R (>= 2.10)
+

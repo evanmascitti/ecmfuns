@@ -7,5 +7,5 @@
 #'
 #' @examples ecm_timestamp()
 ecm_timestamp <- function(){
-  strftime(Sys.time(), format = "%a. %F, %I:%M %p")
+  strftime(Sys.time(), format = "%a. %F, %l:%M %p")
   }
