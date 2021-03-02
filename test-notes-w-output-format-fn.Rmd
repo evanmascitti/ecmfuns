@@ -1,7 +1,7 @@
 ---
 title: "Research or other reading notes"
 date: "begun __ ; document last compiled `r ecmfuns::ecm_timestamp()`"
-output: ecmfuns::quarterly_report
+output: ecmfuns::html_notes
 #html_document
   #ecmfuns::html_notes
   

@@ -17,7 +17,7 @@ if (!grepl(pattern = "\\.rmd$", x = file, ignore.case = T ) ) {
   rmarkdown::draft(file = file,
                    template = "notes",
                    package = "ecmfuns",
-                   create_dir = FALSE,
+                   create_dir = TRUE,
                    edit = FALSE
                   )
 
