@@ -2,8 +2,12 @@
 #'
 #' Includes my own boilerplate YAML and chunk options, and a basic CSS file for
 #' formatting
-#'
-#' @param ... arguments passed on to [`rmarkdown::html_document()`]
+#' @param css arguments passed to [`rmarkdown::html_document()`]
+#' @param toc arguments passed to [`rmarkdown::html_document()`]
+#' @param number_sections arguments passed to [`rmarkdown::html_document()`]
+#' @param highlight_style arguments passed to [`rmarkdown::html_document()`]
+#' @param theme arguments passed to [`rmarkdown::html_document()`]
+#' @param ... arguments passed to [`rmarkdown::html_document()`]
 #' @return HTML output format function; passes arguments to Pandoc via **knitr**
 #'   and **rmarkdown**
 #' @export

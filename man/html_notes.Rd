@@ -14,7 +14,17 @@ html_notes(
 )
 }
 \arguments{
-\item{...}{arguments passed on to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+\item{css}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+
+\item{toc}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+
+\item{number_sections}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+
+\item{highlight_style}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+
+\item{theme}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
+
+\item{...}{arguments passed to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
 }
 \value{
 HTML output format function; passes arguments to Pandoc via \strong{knitr}

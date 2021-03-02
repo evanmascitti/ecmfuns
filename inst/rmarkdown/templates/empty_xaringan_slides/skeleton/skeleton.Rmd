@@ -7,9 +7,6 @@ date: "slides last updated ``r format(Sys.time(), format = '%a %b %e %Y, %I%:%M 
 output:
   xaringan::moon_reader:
     css: ["ecm-16x9-theme.css"]
-    # css: ["full-slide-fig.css"]
-    # css: ./xaringan-themer.css
-    # css: "./inst/rmarkdown/templates/empty_xaringan_slides/skeleton/ecm-16x9-theme.css"
     lib_dir: libs
     nature:
       highlightStyle: github
