@@ -2,12 +2,12 @@ Package: ecmfuns
 Title: A Compilation of My Own Personal R Functions
 Version: 0.0.0.9004
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Evan",
+           family = "Mascitti",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Helps me work faster and better
+           email = "evanmascitti@gmail.com",
+           comment = c(ORCID = "0000-0002-0143-6100"))
+Description: Helps me work faster and better.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -32,7 +32,10 @@ Imports:
     dplyr,
     bookdown
 Suggests: 
-    lifecycle
+    lifecycle,
+    ggtext,
+    cowplot,
+    ggplot2
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
