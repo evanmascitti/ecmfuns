@@ -11,11 +11,28 @@
 
 */
 
+/* controls overall appearance of page */
+body {
+  font-family: "Source Sans Pro","PT Sans", "Arvo", "Roboto Condensed", Sans-Serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.55em;
+}
 
-  html {
-    font-family: "Source Sans Pro","PT Sans", "Arvo", "Roboto Condensed", Sans-Serif;
-  }
+/* suppress list bullet points in table of contents
+See https://stackoverflow.com/questions/28138456/rmarkdown-with-knitr-to-html-how-to-hide-bullets-in-toc-table-of-contents
+*/
 
+div#TOC li {
+    list-style:none;
+    background-image:none;
+    background-repeat:none;
+    background-position:0;
+}
+
+
+/* code formatting */
 code {
   font-family: "Source Code Pro", "Fira Code", Lucida, Sans-Serif;
   font-size: 0.85rem;

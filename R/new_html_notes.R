@@ -1,7 +1,7 @@
 #' Create a new Rmd document for note-taking purposes
 #'
-#' Includes with my own boilperplate YAML and chunk options, and a
-#' basic CSS file for formatting
+#' Includes with my own boilperplate YAML and chunk options and uses the custom
+#' output format function [`html_notes()`], which uses its own basic CSS styles
 #'
 #' @param file path to save the new presentation
 #' @param open whether to open the file in the R Studio IDE
@@ -25,7 +25,7 @@ new_html_notes <- function(file, open = FALSE){
     new_file_path <- list.files(path = ".",
                                 pattern = paste0(stringr::str_remove(file, "\\.Rmd$"),
                                                  "/", file), full.names = T)
-    utils::file.edit(new_file_path)
+    file.show(new_file_path)
   }
 
 }

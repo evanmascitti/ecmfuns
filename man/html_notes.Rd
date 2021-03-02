@@ -4,7 +4,17 @@
 \alias{html_notes}
 \title{Rmd output format for note-taking. Renders to HTML output.}
 \usage{
-html_notes(...)
+html_notes(
+  css = NULL,
+  toc = TRUE,
+  number_sections = FALSE,
+  highlight_style = "github",
+  theme = NULL,
+  ...
+)
+}
+\arguments{
+\item{...}{arguments passed on to \code{\link[rmarkdown:html_document]{rmarkdown::html_document()}}}
 }
 \value{
 HTML output format function; passes arguments to Pandoc via \strong{knitr}

@@ -3,7 +3,7 @@
 #' Includes my own boilerplate YAML and chunk options, and a basic CSS file for
 #' formatting
 #'
-#'
+#' @param ... arguments passed on to [`rmarkdown::html_document()`]
 #' @return HTML output format function; passes arguments to Pandoc via **knitr**
 #'   and **rmarkdown**
 #' @export
@@ -38,16 +38,51 @@
 # seems like the file path is correct so not sure why this is happening.
 # Either way, I need to quit for today.
 
+#######
+
+
+# I fixed it !!!!!!
+# Indeed the problem was that the function could not find the CSS file, because I was not
+# interpreting the behavior of the system.file() function correctly.....the documentation
+# for the base R version of this function is not very good (shocking, I know). You can't specify the
+# entire file path - you are supposed to use individual character vectors for each sub-directory,
+# and NOT use the "inst" sub-directory since when the packages is built all the files in
+# inst are automatically copied to the top-level directory. I finally figured it out after reading part
+# of the chapter on external files in Hadlye's R Packages book. And it works!!!
+
+# Probably this is also why there is no default CSS file to be found in  a xaringan presentation.....
+# it is installed in the package itself and called by the moon_reader function, thus the
+# user never actually sees it.
+
+# The last hurdle I had to conquer was how to allow the user to specify additional
+# CSS sheets and I did this by setting the default CSS to null, then inside the function rea-assigning
+# the CSS to use as a new local variable with the system.file() call.....but this is conditioned
+# on the user not supplying any CSS files. If the user DOEs specify a CSS file in the YAML,
+# the css_files variable is over-ridden with the built-in file getting the least preference.
+
+
 ###
-html_notes <- function(...) {
+html_notes <- function(css = NULL,
+                       toc = TRUE,
+                       number_sections = FALSE,
+                       highlight_style =  "github",
+                       theme = NULL,
+                       ...) {
 
-  css_file <- system.file("inst/rmarkdown/supplemental-files/minimal-sans-css.css",
-                          package = "ecmfuns", mustWork = TRUE)
+  minimal_notes_css <- system.file("rmarkdown", "supplemental-files", "minimal-sans-css.css",
+                                   package = "ecmfuns", mustWork = TRUE)
 
- rmarkdown::html_document(#theme = NULL,
-                          #pandoc_args = NULL,
-                         # includes = NULL,
-                           css = css_file,
+  if(is.null(css)){
+  css_files <- minimal_notes_css
+  } else{
+    css_files <- c(minimal_notes_css, css)
+  }
+
+  bookdown::html_document2(css = css_files,
+                           toc = toc,
+                           number_sections = number_sections,
+                           highlight_style =  highlight_style,
+                           theme = theme,
                           ...)
 
   }

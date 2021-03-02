@@ -2,10 +2,8 @@
 title: "Research or other reading notes"
 date: "begun __ ; document last compiled `r ecmfuns::ecm_timestamp()`"
 output:
-  ecmfuns::html_notes:
-    number_sections: false
-    highlight_style: github
-    code_download: true
+  ecmfuns::html_notes: default
+
 ---
 ```{r setup, include=F}
 knitr::opts_chunk$set(echo = F,
@@ -15,8 +13,6 @@ knitr::opts_chunk$set(echo = F,
                       out.width = "80%",
                       fig.asp = 9/16,
                       dev = 'svglite')
-xfun::pkg_attach(c("tidyverse", "cowplot"))
-ggplot2::theme_set(cowplot::theme_cowplot()+
-                     cowplot::background_grid())
 ```
 
+# Overview
