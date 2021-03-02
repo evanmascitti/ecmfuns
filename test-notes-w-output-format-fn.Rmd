@@ -1,0 +1,35 @@
+---
+title: "Research or other reading notes"
+date: "begun __ ; document last compiled `r ecmfuns::ecm_timestamp()`"
+output: ecmfuns::quarterly_report
+#html_document
+  #ecmfuns::html_notes
+  
+---
+```{r setup, include=F}
+knitr::opts_chunk$set(echo = F,
+                      warning = F,
+                      message = F,
+                      fig.align = 'center',
+                      out.width = "80%",
+                      fig.asp = 9/16,
+                      dev = 'svglite')
+xfun::pkg_attach(c("tidyverse", "cowplot"))
+ggplot2::theme_set(cowplot::theme_cowplot()+
+                     cowplot::background_grid())
+```
+
+# A section heading 
+
+And some text 
+
+And a plot 
+```{r mt-cars, fig.cap='A plot of car fuel mileage'}
+library(ggplot2)
+library(magrittr)
+ggplot2::ggplot(mtcars, aes(disp, mpg))+
+  geom_point()+
+  labs(title = "Fuel mileage suffers when the engine is larger")
+
+```
+
