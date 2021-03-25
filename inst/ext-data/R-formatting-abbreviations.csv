@@ -1,0 +1,30 @@
+id,Type,Thing,Example,Code
+1,full,Evan preferred,2021-03-25 3:37 PM,'%F %l:%m %p'
+2,full,full date- ISO,2021-03-25,%F
+3,full,full date-time-  ISO,2021-03-25 15:54:07,default
+4,full,"full time, with AM/PM",3:53:02 PM,%X
+5,element,year,2021,%Y
+6,element,month,January,%B
+7,element,month,1,not available
+8,element,day,08,%d
+9,element,weekday,Monday,%A
+,full,"full date- locale specific, 2-digit year",03/05/21,%D
+,full,"full date- locale specific, 4-digit year",3/25/2021,%x
+,element,year,21,%y
+,element,month,Jan,%b OR %h
+,element,month,01,%m
+,element,day,8,%e
+,element,weekday,4,%W
+,element,weekday,Mon,%a
+,full,full time with seconds - 12 hr clock,04:01:29 PM,%r
+,element,hour with leading 0 stripped,4,%l
+,element,hour- 12 hr clock,03,%I
+,element,hour- 24 hr clock,15,%H
+,element,AM/PM,PM,%p
+,full,full time with AM/PM,03:47:42 PM,%r
+,element,week number,36,%g
+,element,day of year,157,%j
+,full,"time - 24 hr clock, no seconds",15:49,%R
+,element,second,56,%S
+,full,full time - 24-hour clock,15:50:39,%T
+,element,time zone abbreviation,EDT,%Z
