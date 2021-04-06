@@ -2,17 +2,19 @@
 #'
 #' A helper function to allow fewer packages to be listed in Imports section of DESCRIPTION file
 #'
-#' @param pkgs
+#' @param pkgs Character vector of packages to look for
 #'
 #' @return error message listing the missing packages
 #' @export
 #'
 pkg_check <- function(pkgs){
-required_pkgs <- c("mosaic", "splines", "adaptalint", "AdaptiveSparsity")
 
-missing_pkgs <- vapply(required_pkgs, function(x)!invisible(requireNamespace(x, quietly = T)), FUN.VALUE = TRUE)
+required_pkgs <- pkgs
 
-missing_pkgs
+missing_pkgs <- vapply(
+  X = required_pkgs,
+  FUN = function(x) !invisible(requireNamespace(x, quietly = T)),
+  FUN.VALUE = TRUE)
 
 pkg_check <- any(missing_pkgs)
 

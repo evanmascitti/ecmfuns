@@ -30,7 +30,8 @@ Imports:
     mathjaxr,
     xaringan,
     dplyr,
-    bookdown
+    bookdown,
+    glue
 Suggests: 
     lifecycle,
     ggtext,
