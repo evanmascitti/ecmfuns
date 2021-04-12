@@ -28,3 +28,4 @@ id,Type,Thing,Example,Code
 ,element,second,56,%S
 ,full,full time - 24-hour clock,15:50:39,%T
 ,element,time zone abbreviation,EDT,%Z
+,element,minute,04,%M
