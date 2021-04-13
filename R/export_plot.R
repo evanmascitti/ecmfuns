@@ -6,7 +6,7 @@
 #' @param dir directory in which to save the plots, defaults to 'figs' i.e. a directory named 'figs' located in the top level of current working directory
 #' @param formats character. Image-based file formats to include. Defaults to 'svg', 'png', and 'pdf'.
 #' @param rds Logical. Save in binary .rds format? (Default `TRUE`)
-#' @param ... Currently not used. Eventually re-factor so other arguments may be passed to [`cowplot::save_plot()`]
+#' @param ... Other arguments passed to [`cowplot::save_plot()`]
 #'
 #' @return Writes files to disk and prints a message if successful
 #' @export
@@ -35,7 +35,7 @@ args <- list(
 	filename = visual_paths,
 	plot = rep(list(x), times = length(visual_paths)))
 
-purrr::pwalk(args, cowplot::save_plot)
+purrr::pwalk(args, cowplot::save_plot, ...)
 
 # browser()
 
