@@ -31,7 +31,9 @@ Imports:
     xaringan,
     dplyr,
     bookdown,
-    glue
+    glue,
+    readr,
+    magick
 Suggests: 
     lifecycle,
     ggtext,

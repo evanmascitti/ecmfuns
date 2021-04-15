@@ -19,7 +19,7 @@ export_plot <- function(x, dir = "figs", formats = c('svg', 'png', 'pdf'), rds =
 
 	stem <- substitute(x) %>%
 		as.character() %>%
-		str_replace_all("_", "-")
+		stringr::str_replace_all("_", "-")
 
 
 
@@ -27,7 +27,7 @@ export_plot <- function(x, dir = "figs", formats = c('svg', 'png', 'pdf'), rds =
 
 # build paths to image versions of figures
 
-visual_paths <- paste0(here::here(dir, paste0(stem, ".", formats)))
+visual_paths <- paste0(here::here(dir, formats, paste0(stem, ".", formats)))
 
 # write to all image paths
 

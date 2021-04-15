@@ -15,7 +15,7 @@ export_plot(x, dir = "figs", formats = c("svg", "png", "pdf"), rds = TRUE, ...)
 
 \item{rds}{Logical. Save in binary .rds format? (Default \code{TRUE})}
 
-\item{...}{Currently not used. Eventually re-factor so other arguments may be passed to \code{\link[cowplot:save_plot]{cowplot::save_plot()}}}
+\item{...}{Other arguments passed to \code{\link[cowplot:save_plot]{cowplot::save_plot()}}}
 }
 \value{
 Writes files to disk and prints a message if successful

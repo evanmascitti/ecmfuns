@@ -10,7 +10,7 @@ jpg2png(path)
 \item{path}{Character. Path to one or more images to convert.}
 }
 \value{
-
+Writes a copy of the JPG file as a png in the same directory.
 }
 \description{
 A common task for photos captured with iPhone
