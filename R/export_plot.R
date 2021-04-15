@@ -50,7 +50,7 @@ if(sum(file.exists(visual_paths)) == length(visual_paths)){
 # write  to rds format if not FALSE
 
 	if (rds) {
-		rds_path = here::here(dir, paste0(stem, ".rds"))
+		rds_path <- here::here(dir, "rds", paste0(stem, ".rds"))
 		readr::write_rds(x, rds_path)
 		cat("\n", rds_path, "\n")
 	}
