@@ -4,16 +4,27 @@
 \alias{export_plot}
 \title{Save a plot in a variety of formats with a single call}
 \usage{
-export_plot(x, dir = "figs", formats = c("svg", "png", "pdf"), rds = TRUE, ...)
+export_plot(
+  x,
+  dirs = c("figs", "presentations/presentation-figs"),
+  formats = c("svg", "png", "pdf"),
+  rds = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{ggplot object to save. The file name is automatically populated from the object's name.}
 
-\item{dir}{directory in which to save the plots, defaults to 'figs' i.e. a directory named 'figs' located in the top level of current working directory}
+\item{dirs}{directories in which to save the plots, defaults to 'figs' and
+'presentations/presentation-figs', i.e. a directory named 'figs' located in
+the top level of current working directory and another one specifically for
+SVG versions of R plots used for HTML slide sets.}
 
 \item{formats}{character. Image-based file formats to include. Defaults to 'svg', 'png', and 'pdf'.}
 
-\item{rds}{Logical. Save in binary .rds format? (Default \code{TRUE})}
+\item{rds}{Logical. Save also in binary .rds format? (Default \code{TRUE}; useful
+for building R Markdown documents; the plots can be iteratively imported
+into a list and easily called with code rather than individual file paths)}
 
 \item{...}{Other arguments passed to \code{\link[cowplot:save_plot]{cowplot::save_plot()}}}
 }
