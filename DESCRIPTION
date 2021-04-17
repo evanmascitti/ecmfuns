@@ -14,8 +14,6 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    imager,
-    ImaginR,
     rmarkdown,
     magrittr,
     scales,
@@ -33,8 +31,11 @@ Imports:
     bookdown,
     glue,
     readr,
-    magick
+    magick,
+    rlang
 Suggests: 
+    imager,
+    ImaginR,
     lifecycle,
     ggtext,
     cowplot,

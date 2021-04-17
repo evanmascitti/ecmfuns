@@ -2,6 +2,7 @@
 
 export("%>%")
 export(add_mormar_toughness_est)
+export(build_datasheet_path)
 export(build_drive_url)
 export(ecm_timestamp)
 export(export_plot)
@@ -18,3 +19,4 @@ export(read.files)
 export(theme_ecm_scatter)
 export(today_ecm)
 importFrom(magrittr,"%>%")
+importFrom(rlang,"%||%")

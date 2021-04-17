@@ -19,6 +19,9 @@
 #'
 #'
 hex_extract <- function(image) {
+
+  pkg_check(c("imager", "ImaginR"))
+
   image %>%
     ImaginR::PictureResults() %>%
     .[["const"]] %>%
