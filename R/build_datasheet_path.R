@@ -13,6 +13,7 @@
 #'
 #' @return character vector of paths with length matching that of the `stem`
 #'   argument
+#'
 #' @export
 #'
 #' @example R/examples/build_datasheet_path_example.R
