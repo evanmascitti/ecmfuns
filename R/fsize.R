@@ -10,5 +10,7 @@
 #'
 fsize <- function(path, digits = 0){
 
+  pkg_check('gdata')
+
   gdata::humanReadable(x = base::file.size(path), standard = "SI", digits = digits)
 }

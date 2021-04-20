@@ -57,6 +57,10 @@ today_ecm <- function(dash_format= FALSE, month_abb = TRUE,
     weekday <- ""
   }
 
+  if(!requireNamespace('scales')){
+    stop("This function requires the `scales` package. Please install from CRAN or GitHub.")
+  }
+
   day <- scales::ordinal(lubridate::day(lubridate::today()))
 
   month <-lubridate::month(lubridate::today(), abbr = month_abb, label = T)

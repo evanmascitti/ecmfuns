@@ -16,13 +16,10 @@ RoxygenNote: 7.1.1
 Imports: 
     rmarkdown,
     magrittr,
-    scales,
-    ggforce,
     here,
     purrr,
     stringr,
     lubridate,
-    gdata,
     tibble,
     xfun,
     mathjaxr,
@@ -39,7 +36,10 @@ Suggests:
     lifecycle,
     ggtext,
     cowplot,
-    ggplot2
+    ggplot2,
+    tidyselect,
+    scales,
+    gdata
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
