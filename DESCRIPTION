@@ -14,28 +14,32 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Imports: 
-    imager,
-    ImaginR,
     rmarkdown,
     magrittr,
-    scales,
-    ggforce,
     here,
     purrr,
     stringr,
     lubridate,
-    gdata,
     tibble,
     xfun,
     mathjaxr,
     xaringan,
     dplyr,
-    bookdown
+    bookdown,
+    glue,
+    readr,
+    magick,
+    rlang
 Suggests: 
+    imager,
+    ImaginR,
     lifecycle,
     ggtext,
     cowplot,
-    ggplot2
+    ggplot2,
+    tidyselect,
+    scales,
+    gdata
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
