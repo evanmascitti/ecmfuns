@@ -36,12 +36,13 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 # build paths to image versions of figures
 
-
 	figs_folder_fig_paths <- here::here("figs", formats, glue::glue("{stem}.{formats}"))
 
 	presentation_folder_svg_fig_path <- here::here("presentations", "presentation-figs", glue::glue("{stem}.svg"))
 
-	visual_paths <- c(figs_folder_fig_paths, presentation_folder_svg_fig_path)
+	presentation_folder_png_fig_path <- here::here("presentations", "presentation-figs", glue::glue("{stem}.png"))
+
+	visual_paths <- unlist(mget(ls(pattern = "_fig_path"))) # (figs_folder_fig_paths, presentation_folder_svg_fig_path)
 
 # write to all image paths
 
