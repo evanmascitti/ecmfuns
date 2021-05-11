@@ -52,7 +52,7 @@
 # entire file path - you are supposed to use individual character vectors for each sub-directory,
 # and NOT use the "inst" sub-directory since when the packages is built all the files in
 # inst are automatically copied to the top-level directory. I finally figured it out after reading part
-# of the chapter on external files in Hadlye's R Packages book. And it works!!!
+# of the chapter on external files in Hadley's R Packages book. And it works!!!
 
 # Probably this is also why there is no default CSS file to be found in  a xaringan presentation.....
 # it is installed in the package itself and called by the moon_reader function, thus the
