@@ -40,7 +40,8 @@ Suggests:
     ggplot2,
     tidyselect,
     scales,
-    gdata
+    gdata,
+    ragg
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues

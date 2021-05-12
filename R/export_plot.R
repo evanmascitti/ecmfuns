@@ -50,7 +50,7 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 	devices <- tibble(
 	  extension = c('pdf', 'svg', 'png'),
-	  device = list(cairo_pdf, svglite::svglite, ragg::agg_png)
+	  device = list(cairo_pdf, svg, ragg::agg_png)
 	)
 
 	# trying the ragg::agg_png device for now but its arguments
