@@ -45,9 +45,23 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 # write to all image paths
 
-args <- list(
+	browser()
+
+	devices <- tibble(
+	  extension = c('pdf', 'svg', 'png'),
+	  device = list(cairo_pdf, svglite::svglite, ragg::agg_png)
+	)
+
+	# trying the ragg::agg_png device for now but its arguments
+	# are not consistent with ggsave....therefore might need to
+	# switch back to default png device or to cairo png
+
+args <- tibble(
 	filename = visual_paths,
-	plot = rep(list(x), times = length(visual_paths)))
+	extension = tools::file_ext(filename),
+	plot = rep(list(x), times = length(visual_paths))) %>%
+  dplyr::left_join(devices) %>%
+  dplyr::select(-extension)
 
 purrr::pwalk(args, cowplot::save_plot, ...)
 

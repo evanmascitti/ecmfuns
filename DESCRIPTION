@@ -29,7 +29,8 @@ Imports:
     glue,
     readr,
     magick,
-    rlang
+    rlang,
+    svglite
 Suggests: 
     imager,
     ImaginR,
