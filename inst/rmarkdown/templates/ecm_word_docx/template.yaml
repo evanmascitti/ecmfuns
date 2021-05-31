@@ -1,0 +1,4 @@
+name: ecm_word_docx
+description: >
+   A word document with better default formatting
+create_dir: FALSE

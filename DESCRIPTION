@@ -41,7 +41,8 @@ Suggests:
     tidyselect,
     scales,
     gdata,
-    ragg
+    ragg,
+    grDevices
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues

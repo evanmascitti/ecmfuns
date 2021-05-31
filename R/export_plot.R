@@ -15,8 +15,9 @@
 #'
 #' @return Writes files to disk and prints a message if successful
 #' @export
+#' @importFrom grDevices cairo_pdf svg
 #'
-
+#'
 export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), formats = c('svg', 'png', 'pdf'), rds = TRUE, ...){
 
 
@@ -48,7 +49,7 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 	browser()
 
-	devices <- tibble(
+	devices <- tibble::tibble(
 	  extension = c('pdf', 'svg', 'png'),
 	  device = list(cairo_pdf, svg, ragg::agg_png)
 	)
@@ -57,12 +58,12 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 	# are not consistent with ggsave....therefore might need to
 	# switch back to default png device or to cairo png
 
-args <- tibble(
+args <- tibble::tibble(
 	filename = visual_paths,
-	extension = tools::file_ext(filename),
+	extension = tools::file_ext(.data$filename),
 	plot = rep(list(x), times = length(visual_paths))) %>%
   dplyr::left_join(devices) %>%
-  dplyr::select(-extension)
+  dplyr::select(-.data$extension)
 
 purrr::pwalk(args, cowplot::save_plot, ...)
 

@@ -1,0 +1,12 @@
+---
+title: 'A word doc'
+author: "Evan C. Mascitti"
+date: "``Last compiled `r Sys.Date()` ``"
+output: ecmfuns::ecm_docx
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+knitr::opts_knit$set(root.dir = here::here())
+```
+
