@@ -5,25 +5,19 @@ author: "Evan C. Mascitti"
 institute: "Penn State University"
 date: "slides last updated ``r format(Sys.time(), format = '%a %b %e %Y, %I%:%M %p')``"
 output:
-  xaringan::moon_reader:
-    css: ["ecm-16x9-theme.css"]
+  ecmfuns::ecm_xaringan:
     lib_dir: libs
-    nature:
-      highlightStyle: github
-      highlightLines: true
-      countIncrementalSlides: false
-      ratio: "16:9"
-      
 ---
 
-<!-- include background images EITHER either a local source or the web with: -->
+<!-- include background images from EITHER either a local source or the web with: -->
+<!-- Note that background image paths are always relative to the document directory -->
 <!-- background-image: url("path/to/image") -->
 <!-- background-size: contain -->
 
 
 <!-- Set presentation notes with ??? -->
 <!-- Some useful CSS classes are available for full-slide figures and highlighted and colored text -->
-<!-- .full-page-fig -->
+<!-- .full-fig -->
 <!-- .highlight (note that you may also use the <mark>text</mark> syntax i.e. inline HTML) -->
 <!-- .blue -->
 <!-- .red -->
@@ -46,9 +40,8 @@ knitr::opts_chunk$set(message = F,
                       out.width = "100%",
                       fig.asp = 9/16,
                       fig.align = 'center',
-                      dev = 'svglite')
-knitr::opts_knit$set(root.dir = getwd())
-
+                      dev = 'svglite',
+                      fig.retina = 3)
 ```
 
 - some slide content 
@@ -61,7 +54,7 @@ knitr::opts_knit$set(root.dir = getwd())
 
 ---
 
-class: full-slide-fig
+class: full-fig
 ```{r}
 ggplot2::ggplot(mtcars, ggplot2::aes(disp, mpg))+
   ggplot2::geom_point()+

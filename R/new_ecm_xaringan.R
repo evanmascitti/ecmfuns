@@ -5,7 +5,7 @@
 #' @return creates file and (if specified) opens in R Studio IDE
 #' @export
 
-new_xaringan <- function(file, open = FALSE){
+new_ecm_xaringan <- function(file, open = FALSE){
 
 if (!grepl(pattern = "\\.rmd$", x = file, ignore.case = T ) ) {
     file <-paste0(file, '.Rmd')
@@ -14,7 +14,7 @@ if (!grepl(pattern = "\\.rmd$", x = file, ignore.case = T ) ) {
   rmarkdown::draft(file = file,
                    template = "empty_xaringan_slides",
                    package = "ecmfuns",
-                   create_dir = T,
+                   create_dir = F,
                    edit = FALSE
                   )
 

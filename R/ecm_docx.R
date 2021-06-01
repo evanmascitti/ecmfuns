@@ -6,7 +6,7 @@
 #'
 ecm_docx <- function(...){
 
-  ref_doc <- system.file('rmarkdown', 'templates', 'ecm_word_docx', 'skeleton', 'docx-formatting-template.docx')
+  ref_doc <- system.file('rmarkdown', 'templates', 'ecm_word_docx', 'skeleton', 'docx-formatting-template.docx', package = 'ecmfuns', mustWork = TRUE)
 
   rmarkdown::word_document(reference_docx = ref_doc, ...)
 

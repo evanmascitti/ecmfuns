@@ -47,7 +47,7 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 # write to all image paths
 
-	browser()
+	# browser()
 
 	devices <- tibble::tibble(
 	  extension = c('pdf', 'svg', 'png'),

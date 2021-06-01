@@ -1,7 +1,7 @@
 ---
 title: 'A word doc'
 author: "Evan C. Mascitti"
-date: "``Last compiled `r Sys.Date()` ``"
+date: "``Last compiled `r ecmfuns::ecm_timestamp()` ``"
 output: ecmfuns::ecm_docx
 ---
 
