@@ -4,9 +4,11 @@
 \alias{ecm_docx}
 \title{Customized word document output}
 \usage{
-ecm_docx(...)
+ecm_docx(number_lines = TRUE, ...)
 }
 \arguments{
+\item{number_lines}{Logical. Whether line numbers should be printed in output document}
+
 \item{...}{arguments passed to \code{rmarkdown::word_document()}}
 }
 \description{

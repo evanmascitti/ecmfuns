@@ -45,14 +45,29 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 
 	visual_paths <- unlist(mget(ls(pattern = "_fig_path"))) # (figs_folder_fig_paths, presentation_folder_svg_fig_path)
 
+	# browser()
+
 # write to all image paths
+
+
+	# pdf first
+
+	# cowplot::save_plot(filename = )
+
+
 
 	# browser()
 
 	devices <- tibble::tibble(
 	  extension = c('pdf', 'svg', 'png'),
-	  device = list(cairo_pdf, svg, ragg::agg_png)
+	 # device = list(grDevices::cairo_pdf, 'svg', 'png')
+	 device = list('pdf', 'svg', 'png')
 	)
+
+
+
+
+
 
 	# trying the ragg::agg_png device for now but its arguments
 	# are not consistent with ggsave....therefore might need to
@@ -69,7 +84,7 @@ purrr::pwalk(args, cowplot::save_plot, ...)
 
 if(sum(file.exists(visual_paths)) == length(visual_paths)){
 	cat("Files written to disk: \n")
-	cat(visual_paths, sep = "\n\n")
+	cat(visual_paths[file.exists(visual_paths)], sep = "\n\n")
 } else{
 	warning("One or more files could not be written")
 }
