@@ -18,7 +18,7 @@
 #' @importFrom grDevices cairo_pdf svg
 #'
 #'
-export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), formats = c('svg', 'png', 'pdf'), rds = TRUE, ...){
+export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), formats = c('svg', 'png', 'pdf'), rds = FALSE, ...){
 
 
 	# create a file stem separated by dashes by taking
@@ -29,7 +29,7 @@ export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), 
 		stringr::str_replace_all("_", "-")
 
 
-	dirs <- match.arg(dirs, choices = c("figs", "presentations/presentation-figs"), several.ok = T)
+	dirs <- match.arg(dirs, choices = c("figs", "presentations/presentation-figs", "unofficial-figs"), several.ok = T)
 
 	formats <- match.arg(formats, choices = c('svg', 'png', 'PNG', 'pdf', 'JPG'), several.ok = T)
 
