@@ -11,7 +11,7 @@ ecm_docx <- function(number_lines = TRUE, ...){
 
   ref_doc_NO_line_numbers <- system.file('rmarkdown', 'templates', 'ecm_word_docx', 'skeleton', 'docx-formatting-template-no-line-numbers.docx', package = 'ecmfuns', mustWork = TRUE)
 
-  bookdown::word_document2(
+  officedown::rdocx_document(
     reference_docx = ifelse(
       number_lines,
       ref_doc_w_line_numbers,

@@ -5,3 +5,8 @@
 ^LICENSE\.md$
 ^figs$
 ^presentations$
+^ecm-16x9-theme\.css$
+^building-custom-css-with-xaringanthemer\.R$
+^css-file-built-from-xaringanthemer-not-working\.css$
+^misc-files$
+^archive$

@@ -27,7 +27,9 @@ Imports:
     readr,
     magick,
     rlang,
-    svglite
+    svglite,
+    knitr,
+    officedown
 Suggests: 
     imager,
     here,

@@ -8,7 +8,7 @@ export_plot(
   x,
   dirs = c("figs", "presentations/presentation-figs"),
   formats = c("svg", "png", "pdf"),
-  rds = TRUE,
+  rds = FALSE,
   ...
 )
 }
