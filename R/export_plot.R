@@ -7,8 +7,8 @@
 #'   'presentations/presentation-figs', i.e. a directory named 'figs' located in
 #'   the top level of current working directory and another one specifically for
 #'   SVG versions of R plots used for HTML slide sets.
-#' @param formats character. Image-based file formats to include. Defaults to 'svg', 'png', and 'pdf'.
-#' @param rds Logical. Save also in binary .rds format? (Default `TRUE`; useful
+#' @param formats character. Image-based file formats to include. Allowed formats include 'svg', 'png', and 'pdf'.
+#' @param rds Logical. Save also in binary .rds format? (Default `FALSE`; useful
 #'   for building R Markdown documents; the plots can be iteratively imported
 #'   into a list and easily called with code rather than individual file paths)
 #' @param ... Other arguments passed to [`cowplot::save_plot()`]
@@ -18,7 +18,7 @@
 #' @importFrom grDevices cairo_pdf svg
 #'
 #'
-export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), formats = c('svg', 'png', 'pdf'), rds = FALSE, ...){
+export_plot <- function(x, dirs = c('figs', 'presentations/presentation-figs'), formats = c('png', 'pdf'), rds = FALSE, ...){
 
 
 	# create a file stem separated by dashes by taking
