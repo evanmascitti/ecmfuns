@@ -44,9 +44,11 @@ Suggests:
     scales,
     gdata,
     ragg,
-    grDevices
+    grDevices,
+    testthat (>= 3.0.0)
 RdMacros: lifecycle, mathjaxr
 URL: https://github.com/evanmascitti/ecmfuns
 BugReports: https://github.com/evanmascitti/ecmfuns/issues
 Depends: 
     R (>= 2.10)
+Config/testthat/edition: 3

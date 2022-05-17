@@ -1,3 +1,15 @@
+# NOTE that as of 2022-05-17 this function was removed from the package
+# by taking out the @export command in the roxygen.
+
+# I made a new function; `save_fig()` which replaces this. I have used
+# it successfully with `Make` and my relatively rigid directory structure
+# so I am going to stick with that one for now .
+
+
+
+
+
+
 #' Save a plot in a variety of formats with a single call
 #'
 #' Convenient for keeping plots at the ready for presentations, papers, social media, etc.
@@ -14,7 +26,6 @@
 #' @param ... Other arguments passed to [`cowplot::save_plot()`]
 #'
 #' @return Writes files to disk and prints a message if successful
-#' @export
 #' @importFrom grDevices cairo_pdf svg
 #'
 #'

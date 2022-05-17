@@ -19,6 +19,11 @@ theme_ecm_bw <- function() {
 
 
   ggplot2::theme_bw() %+replace%
-    ggplot2::theme(panel.grid = ggplot2::element_line(size  = 0.25, color = 'grey95'))
+    ggplot2::theme(
+      panel.grid = ggplot2::element_line(size  = 0.25, color = 'grey95'),
+      # strip.background = ggplot2::element_rect(fill = 'transparent'),
+      strip.background = ggplot2::element_blank()
+      # strip.text = ggplot2::element_text(face = 'bold')
+      )
 
   }
