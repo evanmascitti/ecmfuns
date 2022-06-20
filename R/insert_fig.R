@@ -23,7 +23,20 @@ insert_fig <- function(stem, type = dplyr::if_else(
     'figs', type, paste0(stem, ".", type)
   )
 
-  knitr::include_graphics(fig_path)
 
+  # if using word output, need to preserve the native aspect ratio
+  # and dynamically reference it to the image dimensions
+  # see https://stackoverflow.com/questions/70312388/how-to-import-a-figure-as-its-original-height-width-ratio for this solution
 
-}
+  if(!knitr::is_latex_output() & !knitr::is_html_output()){
+
+    my_pic <- imager::load.image(fig_path)
+    asp_rat <- dim(my_pic)[2]/dim(my_pic)[1] #find our aspect ratio
+
+    knitr::opts_chunk$set(fig.asp = asp_rat)
+    knitr::include_graphics(fig_path)
+  } else{
+    knitr::include_graphics(fig_path)
+  }
+
+  }
