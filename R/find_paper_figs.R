@@ -7,10 +7,10 @@
 #' @return character vector of file stems
 #' @export
 #'
-find_paper_figs <- function(file) {
+find_paper_figures <- function(file) {
 
   x <- readLines(
-    con = "./paper/oversizeAttLims-paper-part-1.Rmd"
+    con = file
   )
 
   return_vector <- stringr::str_extract(x[stringr::str_detect(x, 'insert_fig')], "(?<=['\"]).*(?=['\"])")
