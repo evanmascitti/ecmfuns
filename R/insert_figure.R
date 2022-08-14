@@ -8,7 +8,7 @@
 #' @param base Character. Defaults to my usual structure of having a top-level folder for figures, abbreviated `figures/`, but could also be 'figs/'
 #'
 #' @export
-insert_fig <- function(stem, type = dplyr::if_else(
+insert_figure <- function(stem, type = dplyr::if_else(
   knitr::is_latex_output(),
   'pdf',
   'png'),
@@ -20,7 +20,7 @@ insert_fig <- function(stem, type = dplyr::if_else(
                     )
 
   base <- match.arg(arg = base,
-                    choices = c('figures/', 'figs/'),
+                    choices = c('figures', 'figs'),
                     several.ok = FALSE
   )
 
