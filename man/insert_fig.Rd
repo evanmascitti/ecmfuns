@@ -7,7 +7,7 @@
 insert_fig(
   stem,
   type = dplyr::if_else(knitr::is_latex_output(), "pdf", "png"),
-  base = "figs/"
+  base = c("figures")
 )
 }
 \arguments{
@@ -15,7 +15,7 @@ insert_fig(
 
 \item{type}{Character. Format of the file. Defaults to \strong{knitr} and \strong{dplyr} logic.}
 
-\item{base}{Character. Defaults to my usual structure of having a top-level folder for figures, abbreviated \verb{figs/}}
+\item{base}{Character. Defaults to my usual structure of having a top-level folder for figures, abbreviated \verb{figures/}, but could also be 'figs/'}
 }
 \description{
 Wraps \code{knitr::include_graphics()} to easily access my custom directory

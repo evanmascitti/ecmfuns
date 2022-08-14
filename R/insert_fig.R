@@ -5,22 +5,27 @@
 #'
 #' @param stem Character. Basename of figure, without extension.
 #' @param type Character. Format of the file. Defaults to **knitr** and **dplyr** logic.
-#' @param base Character. Defaults to my usual structure of having a top-level folder for figures, abbreviated `figs/`
+#' @param base Character. Defaults to my usual structure of having a top-level folder for figures, abbreviated `figures/`, but could also be 'figs/'
 #'
 #' @export
 insert_fig <- function(stem, type = dplyr::if_else(
   knitr::is_latex_output(),
   'pdf',
   'png'),
-  base = 'figs/'){
+  base = c('figures')){
 
   type <- match.arg(arg = type,
                     choices = c("pdf", "png"),
                     several.ok = FALSE
                     )
 
+  base <- match.arg(arg = base,
+                    choices = c('figures/', 'figs/'),
+                    several.ok = FALSE
+  )
+
   fig_path <- here::here(
-    'figs', type, paste0(stem, ".", type)
+    base, type, paste0(stem, ".", type)
   )
 
 
