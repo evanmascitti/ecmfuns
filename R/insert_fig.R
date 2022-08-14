@@ -24,7 +24,7 @@ insert_fig <- function(stem, type = dplyr::if_else(
                     several.ok = FALSE
   )
 
-  fig_path <- here::here(
+  fig_path <- fs::path(
     base, type, paste0(stem, ".", type)
   )
 
