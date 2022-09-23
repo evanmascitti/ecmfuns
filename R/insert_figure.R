@@ -12,7 +12,7 @@ insert_figure <- function(stem, type = dplyr::if_else(
   knitr::is_latex_output(),
   'pdf',
   'png'),
-  base = c('figures')){
+  base = 'figures'){
 
   type <- match.arg(arg = type,
                     choices = c("pdf", "png"),
@@ -39,8 +39,10 @@ insert_figure <- function(stem, type = dplyr::if_else(
     asp_rat <- dim(my_pic)[2]/dim(my_pic)[1] #find our aspect ratio
 
     knitr::opts_chunk$set(fig.asp = asp_rat)
+    message("Path is: ", fig_path)
     knitr::include_graphics(fig_path)
   } else{
+    message("Path is: ", fig_path)
     knitr::include_graphics(fig_path)
   }
 

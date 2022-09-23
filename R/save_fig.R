@@ -22,7 +22,10 @@ save_fig <- function(plot, pdf_path = NULL, ht = NULL, wdth = NULL, ...){
 
   if(!interactive()){
 
-    pdf_path <- commandArgs(trailingOnly = TRUE)[[1]]
+
+    if(is.null(pdf_path)){
+      pdf_path <- commandArgs(trailingOnly = TRUE)[[1]]
+    }
     png_path <- stringr::str_replace_all(pdf_path, "pdf", "png")
     presentation_figs_png_path <- here::here(
       "presentations", "presentation-figures", basename(png_path)
