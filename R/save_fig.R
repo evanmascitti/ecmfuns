@@ -34,9 +34,9 @@ save_fig <- function(plot, pdf_path = NULL, ht = NULL, wdth = NULL, ...){
 
     all_output_file_paths <- c(pdf_path, png_path, presentation_figs_png_path)
 
-    cat("Building figures: \n")
-    cat(all_output_file_paths, sep = "\n")
-    cat("- - - - - - - - - - - - - - - - - - - - - - - - -", "\n\n")
+    message("Building figures: \n")
+    message(all_output_file_paths, sep = "\n")
+    message("- - - - - - - - - - - - - - - - - - - - - - - - -", "\n\n")
 
 
     # some defaults for the height and width if they are not provided
