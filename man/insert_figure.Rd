@@ -7,7 +7,7 @@
 insert_figure(
   stem,
   type = dplyr::if_else(knitr::is_latex_output(), "pdf", "png"),
-  base = c("figures")
+  base = "figures"
 )
 }
 \arguments{

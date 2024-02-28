@@ -7,7 +7,7 @@
 build_drive_url(id)
 }
 \arguments{
-\item{id}{Character. Unique Google Drive ID, easily obtained with \code{\link[googledrive:as_id]{googledrive::as_id()}} from the \href{https://googledrive.tidyverse.org}{googledrive} package.}
+\item{id}{Character. Unique Google Drive ID, easily obtained with \code{\link[googledrive:drive_id]{googledrive::as_id()}} from the \href{https://googledrive.tidyverse.org}{googledrive} package.}
 }
 \value{
 Character vector with boilerplate url and ID
