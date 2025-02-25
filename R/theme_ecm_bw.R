@@ -23,7 +23,11 @@ theme_ecm_bw <- function() {
       panel.grid = ggplot2::element_line(size  = 0.25, color = 'grey95'),
       # strip.background = ggplot2::element_rect(fill = 'transparent'),
       strip.background = ggplot2::element_blank(),
-      plot.background = element_rect(color = 'grey50')
+      plot.background = element_rect(color = 'grey50'),
+      legend.position = 'inside',
+      legend.position.inside = c(1,1),
+      legend.justification = c(1,1),
+      legend.background = element_blank(),
       # strip.text = ggplot2::element_text(face = 'bold')
       )
 

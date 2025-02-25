@@ -39,6 +39,10 @@ theme_ecm_scatter <- function() {
           margin = ggplot2::margin(0, 3, 0, 0, "mm")
         ),
         legend.box.background = ggplot2::element_rect(fill = "white", color = 'grey75'),
-        legend.box.margin = ggplot2::margin(0, 3, 2, 3, "pt")
+        legend.box.margin = ggplot2::margin(0, 3, 2, 3, "pt"),
+        legend.position = 'inside',
+        legend.position.inside = c(1,1),
+        legend.justification = c(1,1),
+        legend.background = element_blank(),
       )
   }

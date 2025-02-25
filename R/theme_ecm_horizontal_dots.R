@@ -30,7 +30,11 @@ theme_ecm_horizontal_dots <- function() {
       axis.ticks.x = element_blank(),
       axis.text.y = element_blank(),
       axis.line.y = element_blank(),
-      axis.title.y = element_blank()
+      axis.title.y = element_blank(),
+      legend.position = 'inside',
+      legend.position.inside = c(1,1),
+      legend.justification = c(1,1),
+      legend.background = element_blank(),
       # strip.text = ggplot2::element_text(face = 'bold')
       )
 
