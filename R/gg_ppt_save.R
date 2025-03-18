@@ -11,26 +11,30 @@
 #'
 #' @importFrom ggplot2 ggsave
 #'
-gg_ppt_save <- function(plot, filename, aspect_ratio = c('16x9-w-title', 'two-content',  '16x9-full-page'), size_multiplier = 0.9, dpi = 600){ # , height, width, ){
+gg_ppt_save <- function(plot, filename, aspect_ratio = c('16x9-w-title', 'two-content',  '16x9-full-page'), size_multiplier = 0.8, dpi = 600){ # , height, width, ){
+
+  #browser()
 
   aspect_ratio <- match.arg(
     arg = aspect_ratio,
     choices = c('16x9-w-title', 'two-content',  '16x9-full-page'),
-    several.ok = F,
+    several.ok = F
   )
+
 
   if(aspect_ratio == 'two-content'){
 
     height <- 6.09
     width <- 5.92
 
-    if(nchar(plot$labels$title) > 30){
+    if(!is.null(plot$labels$title)){
+      if(nchar(plot$labels$title) > 60){
       warning('Too many characters in title; text may be cut off')
+      }
     }
-
   }
 
-  if(aspect_ratio == '16x9-full-page'){
+    if(aspect_ratio == '16x9-full-page'){
 
     height <- 6.09
     width <- 5.92
