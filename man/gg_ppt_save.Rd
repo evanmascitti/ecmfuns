@@ -8,7 +8,7 @@ gg_ppt_save(
   plot,
   filename,
   aspect_ratio = c("16x9-w-title", "two-content", "16x9-full-page"),
-  size_multiplier = 0.9,
+  size_multiplier = 0.8,
   dpi = 600
 )
 }

@@ -2,6 +2,7 @@
 
 export("%>%")
 export(add_mormar_toughness_est)
+export(beautify_anova_table)
 export(build_datasheet_path)
 export(build_drive_url)
 export(col_clean)
