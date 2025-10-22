@@ -20,7 +20,7 @@ theme_ecm_horizontal_dots <- function() {
 
   ggplot2::theme_bw() %+replace%
     ggplot2::theme(
-      panel.grid = ggplot2::element_line(size  = 0.25, color = 'grey95'),
+      panel.grid = ggplot2::element_line(linewidth  = 0.25, color = 'grey95'),
       # strip.background = ggplot2::element_rect(fill = 'transparent'),
       strip.background = ggplot2::element_blank(),
       #plot.background = element_rect(color = 'grey50'),
