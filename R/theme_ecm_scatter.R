@@ -29,8 +29,6 @@ theme_ecm_scatter <- function() {
     cowplot::theme_cowplot()  +
       cowplot::background_grid(color.minor = 'grey90', size.minor = 0.25)+
       ggplot2::theme(
-        legend.position = c(1, 1),
-        legend.justification = c(1, 1),
         plot.title = ggtext::element_markdown(hjust = 0.5),
         legend.title = ggtext::element_markdown(size = 12,
                                                 margin = ggplot2::margin(2, 0, 0, 0, "mm")),
@@ -42,7 +40,7 @@ theme_ecm_scatter <- function() {
         legend.box.margin = ggplot2::margin(0, 3, 2, 3, "pt"),
         legend.position = 'inside',
         legend.position.inside = c(1,1),
-        legend.justification = c(1,1),
+        legend.justification = c(1, 1),
         legend.background = element_blank(),
       )
   }
