@@ -10,3 +10,5 @@
 ^css-file-built-from-xaringanthemer-not-working\.css$
 ^misc-files$
 ^archive$
+^\.positai$
+^\.claude$
